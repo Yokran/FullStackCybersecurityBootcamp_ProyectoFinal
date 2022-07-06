@@ -1,0 +1,209 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.20
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: https://www.devanddel.com/ [104.21.77.138]
+[32m[+][0m Started: Wed Jun 15 01:06:48 2022
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entries:
+ |  - x-powered-by: PHP/7.4.28, ASP.NET
+ |  - cf-cache-status: DYNAMIC
+ |  - expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+ |  - report-to: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=YK4acdtdqg3pqOUOOrs0cxPhkCVnPhVuQ%2BXOKE%2BdAv96dm4aujILcor4YKDvvEr1nVAd7xscMaAaB%2Ba9CUWMlI0A%2FoWAXz8hvRRKLWpO7QbGvJn794yMJWRDgYo2c8SojUzlnA%3D%3D"}],"group":"cf-nel","max_age":604800}
+ |  - nel: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+ |  - server: cloudflare
+ |  - cf-ray: 71b8c6d1dfcf225d-MIA
+ |  - alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m robots.txt found: https://www.devanddel.com/robots.txt
+ | Interesting Entries:
+ |  - /wp-admin/
+ |  - /wp-admin/admin-ajax.php
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: https://www.devanddel.com/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: https://www.devanddel.com/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: https://www.devanddel.com/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 5.9.1 identified (Insecure, released on 2022-02-22).
+ | Found By: Rss Generator (Passive Detection)
+ |  - https://www.devanddel.com/feed/, <generator>https://wordpress.org/?v=5.9.1</generator>
+ |  - https://www.devanddel.com/comments/feed/, <generator>https://wordpress.org/?v=5.9.1</generator>
+ |
+ | [31m[!][0m 3 vulnerabilities identified:
+ |
+ | [31m[!][0m Title: WordPress (5.9-5.9.1) / Gutenberg (9.8.0-12.7.1) - Contributor+ Stored Cross-Site Scripting
+ |     Fixed in: 5.9.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/1fd6742e-1a32-446d-be3d-7cce44f8f416
+ |      - https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/
+ |
+ | [31m[!][0m Title: WordPress < 5.9.2 - Prototype Pollution in jQuery
+ |     Fixed in: 5.9.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/1ac912c1-5e29-41ac-8f76-a062de254c09
+ |      - https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/
+ |
+ | [31m[!][0m Title: WordPress < 5.9.2 / Gutenberg < 12.7.2 - Prototype Pollution via Gutenberg’s wordpress/url package
+ |     Fixed in: 5.9.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/6e61b246-5af1-4a4f-9ca8-a8c87eb2e499
+ |      - https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/
+ |      - https://github.com/WordPress/gutenberg/pull/39365/files
+
+[32m[+][0m WordPress theme in use: TheFox
+ | Location: https://www.devanddel.com/wp-content/themes/TheFox/
+ | Style URL: https://www.devanddel.com/wp-content/themes/TheFox/style.css
+ | Style Name: TheFox
+ | Style URI: http://www.thefoxwp.com
+ | Description: <strong>A superflexible and responsive Business Theme by Tranmautritam team</strong> - <br/>Update n...
+ | Author: Tranmautritam Team
+ | Author URI: http://themeforest.net/user/tranmautritam?ref=tranmautritam
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 3.3.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://www.devanddel.com/wp-content/themes/TheFox/style.css, Match: 'Version: 3.3.2'
+
+
+[34m[i][0m Plugin(s) Identified:
+
+[32m[+][0m contact-form-7
+ | Location: https://www.devanddel.com/wp-content/plugins/contact-form-7/
+ | Last Updated: 2022-05-18T09:58:00.000Z
+ | [33m[!][0m The version is out of date, the latest version is 5.5.6.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 5.5.6 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://www.devanddel.com/wp-content/plugins/contact-form-7/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - https://www.devanddel.com/wp-content/plugins/contact-form-7/readme.txt
+
+[32m[+][0m js_composer
+ | Location: https://www.devanddel.com/wp-content/plugins/js_composer/
+ | Last Updated: 2022-04-11T12:47:56.000Z
+ | [33m[!][0m The version is out of date, the latest version is 6.9.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Body Tag (Passive Detection)
+ |
+ | [31m[!][0m 1 vulnerability identified:
+ |
+ | [31m[!][0m Title: WPBakery Page Builder < 6.4.1 - Authenticated Stored Cross-Site Scripting (XSS)
+ |     Fixed in: 6.4.1
+ |     References:
+ |      - https://wpscan.com/vulnerability/11285589-1b22-4ec0-adfc-f2add70db4d7
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28650
+ |      - https://www.wordfence.com/blog/2020/10/vulnerability-exposes-over-4-million-sites-using-wpbakery/
+ |
+ | Version: 5.4.7 (60% confidence)
+ | Found By: Body Tag (Passive Detection)
+ |  - https://www.devanddel.com/, Match: 'js-comp-ver-5.4.7'
+
+[32m[+][0m LayerSlider
+ | Location: https://www.devanddel.com/wp-content/plugins/LayerSlider/
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By:
+ |  Urls In 404 Page (Passive Detection)
+ |  Meta Generator (Passive Detection)
+ |
+ | [31m[!][0m 1 vulnerability identified:
+ |
+ | [31m[!][0m Title: LayerSlider < 7.1.2 - Admin+ Stored Cross-Site Scripting
+ |     Fixed in: 7.1.2
+ |     References:
+ |      - https://wpscan.com/vulnerability/1d9d5516-f1c3-4134-b6bf-7f2f890533c4
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1153
+ |
+ | Version: 6.7.1 (60% confidence)
+ | Found By: Meta Generator (Passive Detection)
+ |  - https://www.devanddel.com/, Match: 'Powered by LayerSlider 6.7.1 -'
+
+[32m[+][0m revslider
+ | Location: https://www.devanddel.com/wp-content/plugins/revslider/
+ | Last Updated: 2022-05-25T19:09:55.000Z
+ | [33m[!][0m The version is out of date, the latest version is 6.5.24
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By:
+ |  Urls In 404 Page (Passive Detection)
+ |  Comment (Passive Detection)
+ |  Div Data Version (Passive Detection)
+ |  Meta Generator (Passive Detection)
+ |
+ | Version: 5.4.7.2 (100% confidence)
+ | Found By: Comment (Passive Detection)
+ |  - https://www.devanddel.com/, Match: 'START REVOLUTION SLIDER 5.4.7.2'
+ | Confirmed By: Div Data Version (Passive Detection)
+ |  - https://www.devanddel.com/, Match: '5.4.7.2'
+
+[32m[+][0m wordpress-seo
+ | Location: https://www.devanddel.com/wp-content/plugins/wordpress-seo/
+ | Last Updated: 2022-06-14T07:55:00.000Z
+ | [33m[!][0m The version is out of date, the latest version is 19.1
+ |
+ | Found By: Comment (Passive Detection)
+ |
+ | Version: 18.3 (100% confidence)
+ | Found By: Comment (Passive Detection)
+ |  - https://www.devanddel.com/, Match: 'optimized with the Yoast SEO plugin v18.3 -'
+ | Confirmed By:
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - https://www.devanddel.com/wp-content/plugins/wordpress-seo/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - https://www.devanddel.com/wp-content/plugins/wordpress-seo/readme.txt
+
+
+[34m[i][0m No Config Backups Found.
+
+[32m[+][0m WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 7
+ | Requests Remaining: 68
+
+[32m[+][0m Finished: Wed Jun 15 01:10:26 2022
+[32m[+][0m Requests Done: 197
+[32m[+][0m Cached Requests: 7
+[32m[+][0m Data Sent: 94.776 KB
+[32m[+][0m Data Received: 1.133 MB
+[32m[+][0m Memory used: 242.559 MB
+[32m[+][0m Elapsed time: 00:03:38

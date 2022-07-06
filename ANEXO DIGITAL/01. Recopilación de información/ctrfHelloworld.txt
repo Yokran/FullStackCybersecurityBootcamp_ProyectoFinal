@@ -1,0 +1,26 @@
+
+          ____ _____ _____ ____  
+         / ___|_   _|  ___|  _ \ 
+        | |     | | | |_  | |_) |
+        | |___  | | |  _| |  _ < 
+         \____| |_| |_|   |_| \_\
+	
+     Version 1.2 - Hey don't miss AXFR!
+    Made by Sheila A. Berta (UnaPibaGeek)
+	
+
+[!] ---- TARGET: helloworld-school.com ---- [!] 
+
+[-]  *.helloworld-school.com
+helloworld-school.com
+[-]  chamilo.helloworld-school.com
+chamilo-pruebas.helloworld-school.com
+pruebas.helloworld-school.com
+[-]  helloworld-school.com
+www.helloworld-school.com
+[-]  sensei-pruebas.helloworld-school.com
+[-]  sensei.helloworld-school.com
+[-]  wp-pruebas.helloworld-school.com
+
+
+[!]  Done. Have a nice day! ;).
